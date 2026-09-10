@@ -1,11 +1,14 @@
 version: '3.8'
 
 services:
-  film-log-app:
+  app:
     build: .
     container_name: film-log-app
     ports:
       - "3000:3000"
     volumes:
-      - ./data:/app/data
+      - film_data:/app/data
     restart: always
+
+volumes:
+  film_data:
