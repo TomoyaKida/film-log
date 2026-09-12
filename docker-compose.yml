@@ -9,6 +9,11 @@ services:
     volumes:
       - film_data:/app/data
     restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"   # ログファイルの最大サイズ（例: 10MB）
+        max-file: "3"     # 保存するログファイルの最大世代数
 
 volumes:
   film_data:
